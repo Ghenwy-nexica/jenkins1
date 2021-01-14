@@ -176,4 +176,155 @@
 <arg>${URL}</arg>
 </arguments>
 <msg timestamp="20210114 13:56:39.221" level="INFO">Opening url 'https://www.facebook.com'</msg>
-<status status="PASS" starttime="20210114 13:56:39.221" endtime="20210114 13:56:40.179">
+<status status="PASS" starttime="20210114 13:56:39.221" endtime="20210114 13:56:40.179"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210114 13:56:40.179" endtime="20210114 13:56:42.313"></status>
+</kw>
+<kw name="Velocidad de Selenium" library="Recursos">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.3seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210114 13:56:42.315" endtime="20210114 13:56:42.316"></status>
+</kw>
+<status status="PASS" starttime="20210114 13:56:42.314" endtime="20210114 13:56:42.317"></status>
+</kw>
+<kw name="Config Capturas" library="Recursos">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${Capturas}</arg>
+</arguments>
+<status status="PASS" starttime="20210114 13:56:42.318" endtime="20210114 13:56:42.319"></status>
+</kw>
+<status status="PASS" starttime="20210114 13:56:42.317" endtime="20210114 13:56:42.320"></status>
+</kw>
+<status status="PASS" starttime="20210114 13:56:35.976" endtime="20210114 13:56:42.320"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1seconds</arg>
+</arguments>
+<msg timestamp="20210114 13:56:43.334" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210114 13:56:42.321" endtime="20210114 13:56:43.334"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://elpais.com/</arg>
+</arguments>
+<msg timestamp="20210114 13:56:43.335" level="INFO">Opening url 'https://elpais.com/'</msg>
+<status status="PASS" starttime="20210114 13:56:43.335" endtime="20210114 13:57:05.425"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="didomi-notice-agree-button"]</arg>
+</arguments>
+<msg timestamp="20210114 13:57:05.427" level="INFO">Clicking element 'xpath=//*[@id="didomi-notice-agree-button"]'.</msg>
+<status status="PASS" starttime="20210114 13:57:05.426" endtime="20210114 13:57:06.365"></status>
+</kw>
+<kw name="Cerrar Navegador" library="Recursos" type="teardown">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1seconds</arg>
+</arguments>
+<msg timestamp="20210114 13:57:07.367" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210114 13:57:06.366" endtime="20210114 13:57:07.367"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210114 13:57:07.367" endtime="20210114 13:57:09.707"></status>
+</kw>
+<status status="PASS" starttime="20210114 13:57:06.365" endtime="20210114 13:57:09.707"></status>
+</kw>
+<doc>Test de pruebas para integración con jenkins</doc>
+<tags>
+<tag>Prueba</tag>
+</tags>
+<status status="PASS" starttime="20210114 13:56:35.973" endtime="20210114 13:57:09.707" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Test 003 Pruebas de Jenkins 3">
+<kw name="Abrir Navegador" library="Recursos" type="setup">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules["selenium.webdriver.chrome.options"].Options()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${opciones}</var>
+</assign>
+<msg timestamp="20210114 13:57:09.707" level="INFO">${opciones} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000022138451B80&gt;</msg>
+<status status="PASS" starttime="20210114 13:57:09.707" endtime="20210114 13:57:09.707"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${opciones}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210114 13:57:09.707" endtime="20210114 13:57:09.707"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>options=${opciones}</arg>
+</arguments>
+<assign>
+<var>${Diver}</var>
+</assign>
+<msg timestamp="20210114 13:57:09.707" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" starttime="20210114 14:02:43.533" endtime="20210114 14:02:43.534"></status>
+</kw>
+<msg timestamp="20210114 14:02:43.535" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20210114 13:57:09.707" endtime="20210114 14:02:43.535"></status>
+</kw>
+<status status="FAIL" starttime="20210114 13:57:09.707" endtime="20210114 14:02:43.536"></status>
+</kw>
+<kw name="Cerrar Navegador" library="Recursos" type="teardown">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1seconds</arg>
+</arguments>
+<msg timestamp="20210114 14:02:44.554" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210114 14:02:43.538" endtime="20210114 14:02:44.554"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210114 14:02:44.554" endtime="20210114 14:02:44.554"></status>
+</kw>
+<status status="PASS" starttime="20210114 14:02:43.537" endtime="20210114 14:02:44.554"></status>
+</kw>
+<status status="FAIL" starttime="20210114 13:57:09.707" endtime="20210114 14:02:44.554" critical="yes">Setup failed:
+Execution terminated by signal</status>
+</test>
+<doc>Test_suite para pruebas de automatización en jenkins</doc>
+<status status="FAIL" starttime="20210114 13:56:19.510" endtime="20210114 14:02:44.554"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0">Prueba</stat>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210114 14:02:43.535" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>
