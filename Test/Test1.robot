@@ -20,7 +20,7 @@ Test 001 Pruebas para jenkins
   Click Element    xpath=//*[@id="u_0_h"]
   Input Text    xpath=//*[@id="email"]    Esto es una prueba
   Input Text    xpath=//*[@id="pass"]     Esto es otra prueba
-  
+
 
 Test 002 Pruebas de jenkins 2
   [Tags]        Prueba
@@ -30,8 +30,8 @@ Test 002 Pruebas de jenkins 2
   Click Element    xpath=//*[@id="didomi-notice-agree-button"]
 
 Test 003 Pruebas de Jenkins 3
-[Tags]            Prueba
-[Documentation]   Test de pruebas para integración con jenkins
+  [Tags]            Prueba
+  [Documentation]   Test de pruebas para integración con jenkins
   Go To    https://duckduckgo.com/
   Wait Until Element Is Visible    xpath=//*[@id="search_form_input_homepage"]
   Page Should Contain Element    id=logo_homepage_link
