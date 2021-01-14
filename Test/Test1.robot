@@ -20,6 +20,7 @@ Test 001 Pruebas para jenkins
   Click Element    xpath=//*[@id="u_0_h"]
   Input Text    xpath=//*[@id="email"]    Esto es una prueba
   Input Text    xpath=//*[@id="pass"]     Esto es otra prueba
+  Sleep    1seconds
 
 Test 002 Pruebas de jenkins 2
   [Tags]        Prueba
